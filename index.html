@@ -7,19 +7,33 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-		<form class="form" name="order" method="POST" action="php/order.php">
-			<h2>Сделать заказ</h2>
+	<form class="form" name="order" method="POST" action="php/order.php">
+		<h2>Сделать заказ</h2>
 
-			<label for="name"> Имя:</label>
-			<input id="name" type="text" name="name">
-			
-			<label for="phone">Телефон:</label>
-			<input id="phone" type="text" name="phone">
-			
-			<label for="message">Комментарий:</label>
-			<textarea id="message" name="message"></textarea>
-			
-			<button type="submit">Заказать</button>
-		</form>
+		<label for="name">Заказчик:</label>
+		<input id="name" type="text" name="name" placeholder="Иванов Иван Иванович">
+
+		<label for="entity">Лицо:</label>
+		<div>
+			<input type="radio" id="choice_1" name="entity" value="physical" checked>
+			Физическое
+		</div>
+		<div>
+			<input type="radio" id="choice_2" name="entity" value="legal">
+			Юридическое
+		</div>
+		
+		<label for="contract">Номер договора:</label>
+		<input type="text" id="contract" name="contract" placeholder="01/05-Д">
+		
+		<label for="phone">Телефон:</label>
+		<input id="phone" type="text" name="phone" placeholder="+71234567890">
+		
+		<label for="message">Комментарий:</label>
+		<textarea id="message" name="message"></textarea>
+		
+		<button type="submit">Заказать</button>
+	</form>
+	<script src="js/order.js"></script>
 </body>
 </html>
