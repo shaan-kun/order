@@ -6,6 +6,12 @@
 	$phone = $_POST['phone'];
 	$message = $_POST['message'];
 
-	mysqli_query($connect, "INSERT INTO `order` (name, phone, message) VALUES ('{$name}', '{$phone}', '{$message}')");
+	$query = $connect->prepare("INSERT INTO `order` (name, phone, message) VALUES (?, ?, ?)");
 
-	// header('Location: ../index.html');
+	$query->bindParam(1, $name);  
+	$query->bindParam(2, $phone);  
+	$query->bindParam(3, $message); 
+
+	$query->execute();
+
+	header('Location: ../index.html');

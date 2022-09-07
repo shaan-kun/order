@@ -1,13 +1,13 @@
 <?php
 
-	$host = "localhost";
-	$user = "root";
-	$password = "";
-	$database = "delivery";
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "delivery";
 
-	$connect = mysqli_connect($host, $user, $password, $database);
-
-	if (!$connect)
-	{
-		die("Ошибка подключения к базе данных!");
-	}
+try {  
+	$connect = new PDO("mysql:host=$host;dbname=$database", $user, $pass);   
+}  
+catch(PDOException $e) {  
+	echo $e->getMessage();  
+}
