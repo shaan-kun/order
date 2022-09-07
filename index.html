@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Заказ</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+		<form class="form" name="order" method="POST" action="php/order.php">
+			<h2>Сделать заказ</h2>
+
+			<label for="name"> Имя:</label>
+			<input id="name" type="text" name="name">
+			
+			<label for="phone">Телефон:</label>
+			<input id="phone" type="text" name="phone">
+			
+			<label for="message">Комментарий:</label>
+			<textarea id="message" name="message"></textarea>
+			
+			<button type="submit">Заказать</button>
+		</form>
+</body>
+</html>
